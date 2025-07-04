@@ -23,14 +23,15 @@ const Navbar = () => {
   Our Clients
 </Link>
 
-<Link to="/schedule"
-  href="https://calendly.com/YOUR_USERNAME"
+<a
+  href="https://calendly.com/trazak"
   target="_blank"
   rel="noopener noreferrer"
   className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
 >
   Schedule a Call
-</Link>
+</a>
+
         </div>
       </nav>
     </div>

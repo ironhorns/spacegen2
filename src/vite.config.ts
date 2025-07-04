@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     // 👇 This is the important part
-    historyApiFallback: true,
+    port: 3000,
+    open: true
   },
 })
