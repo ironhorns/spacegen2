@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource/inter": "^5.2.6",
+    "@iconify/react": "^6.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.518.0",
@@ -18,14 +20,14 @@
     "react-calendly": "^4.4.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.6.2",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@types/node": "^18.19.71",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.17.0",
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",

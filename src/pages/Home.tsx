@@ -1,125 +1,141 @@
-import { Rocket, Brain, Code, Cloud, Lock, Database, CreditCard, Cpu, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+export default function Home() {
   return (
-    <div className="bg-white rounded-2xl shadow p-6">
-      <div className="flex items-center gap-3 mb-4">
-        {icon}
-        <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-      </div>
-      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Navigation Bar */}
-   
-
+    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-blue-900">
       {/* Hero Section */}
-     {/* Hero Section */}
-<motion.div
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7 }}
-  className="text-center mb-16 pt-10 px-6"
->
-  <h1 className="text-5xl font-bold text-gray-800 flex justify-center items-center gap-3">
-    <Rocket className="w-10 h-10 text-purple-600" /> SpaceGen AI
-  </h1>
-
-
-  {/* 🔁 Video Player instead of Button */}
-  <div className="mt-3 w-2/4 mx-auto rounded-xl overflow-hidden shadow-lg">
-    <video
-      className="w-full h-auto"
-      controls
-      autoPlay
-      muted
-      loop
-      poster="/images/video-poster.jpg" // Optional: Static thumbnail before play
-    >
-      <source src="/images/demo2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</motion.div>
-
-
-      {/* Services Section */}
-      <section id="services" className="max-w-6xl mx-auto mb-20 px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Our Services</h2>
-        <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-    Solutions for AI and Agents Modern and Classic full stack development
-  </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <FeatureCard
-            icon={<Brain className="text-purple-600 w-8 h-8" />}
-            title="AI Agents & LLM Integration"
-            description="Deploy autonomous agents powered by GPT-4, Claude, and Whisper using LangChain, Pinecone, and vector databases."
-          />
-          <FeatureCard
-            icon={<Code className="text-purple-600 w-8 h-8" />}
-            title="Full-Stack Development"
-            description="Build enterprise-grade apps with React, Next.js, Angular, Node.js, Python, and .NET Core."
-          />
-          <FeatureCard
-            icon={<Cloud className="text-purple-600 w-8 h-8" />}
-            title="Cloud-Native SaaS"
-            description="Build scalable serverless systems using AWS Lambda, API Gateway, Cognito, and Terraform."
-          />
-          <FeatureCard
-            icon={<CreditCard className="text-purple-600 w-8 h-8" />}
-            title="Fintech & Payments"
-            description="Integrate token vaults, Stripe, EMV, and PCI-compliant fraud detection systems."
-          />
-          <FeatureCard
-            icon={<Database className="text-purple-600 w-8 h-8" />}
-            title="Databases & Storage"
-            description="Use PostgreSQL, MongoDB, Redis, DynamoDB, and Pinecone for mixed data workloads."
-          />
-          <FeatureCard
-            icon={<Lock className="text-purple-600 w-8 h-8" />}
-            title="Security & Compliance"
-            description="Implement Zero Trust, OAuth2, SSO, and meet HIPAA/PCI/GDPR compliance."
-          />
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="bg-white py-16 rounded-2xl shadow-md max-w-6xl mx-auto mb-20 px-6">
-        <div className="flex items-center gap-4 mb-6">
-          <Cpu className="w-6 h-6 text-purple-600" />
-          <h2 className="text-2xl font-bold text-gray-800">About Us</h2>
-        </div>
-        <p className="text-gray-700 text-md leading-relaxed">
-          SpaceGen AI is a forward-thinking software company specializing in AI-driven applications and intelligent agent architecture.
-          We design scalable SaaS platforms integrating LLMs, vector databases, and cloud-native technologies.
+      <section
+        className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 pb-10 pt-16 text-center
+      "
+      >
+        {/* 🧠 Heading */}
+        <h1 className="mb-4 text-5xl font-extrabold">
+          AI Agents That Work For You — While You Sleep.
+        </h1>
+        <p className="mb-2 mt-0 text-sm text-green-800">
+          Automate your lead generation, outreach, and content with intelligent
+          agents. SpaceGen AI is launching soon — join the waitlist or lock in
+          early access.
         </p>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="bg-purple-50 py-16 rounded-2xl shadow-md max-w-4xl mx-auto px-6">
-        <div className="flex items-center gap-4 mb-6">
-          <Mail className="w-6 h-6 text-purple-600" />
-          <h2 className="text-2xl font-bold text-gray-800">Contact Us</h2>
-        </div>
-        <p className="text-gray-700 mb-4">
-          We'd love to hear from you. Whether you're ready to build your AI SaaS solution or just want to chat, reach out anytime.
-        </p>
-        <form className="grid grid-cols-1 gap-4">
-          <input className="p-3 rounded-md border border-gray-300" type="text" placeholder="Your Name" />
-          <input className="p-3 rounded-md border border-gray-300" type="email" placeholder="Your Email" />
-          <textarea className="p-3 rounded-md border border-gray-300" rows={4} placeholder="Your Message"></textarea>
-          <Button className="w-full">Send Message</Button>
+        {/* 💌 Email Waitlist Form */}
+        {/* 💌 Email Waitlist Form (Connected to Backend) */}
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const emailInput =
+              document.querySelector<HTMLInputElement>("#waitlistEmail");
+            const messageLabel =
+              document.querySelector<HTMLParagraphElement>("#formMessage");
+
+            if (!emailInput) return;
+
+            const email = emailInput.value.trim();
+            if (!email) {
+              messageLabel!.textContent = "❌ Please enter an email.";
+              return;
+            }
+
+            messageLabel!.textContent = "Submitting...";
+
+            try {
+              const res = await fetch("http://localhost:5000/api/waitlist", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+              });
+              const data = await res.json();
+
+              if (res.ok) {
+                messageLabel!.textContent =
+                  "✅ You've been added to the waitlist!";
+                emailInput.value = "";
+              } else {
+                messageLabel!.textContent = `❌ ${data.error}`;
+              }
+            } catch (err) {
+              messageLabel!.textContent = "❌ Network error. Please try again.";
+            }
+          }}
+          className="mx-auto mb-4 flex w-full max-w-xl flex-col items-center gap-4 sm:flex-row"
+        >
+          <input
+            id="waitlistEmail"
+            type="email"
+            required
+            placeholder="Enter your email"
+            className="w-full rounded-lg border border-blue-300 px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            className="py3 mb-2 inline-block rounded-lg bg-blue-600 px-10 font-semibold text-white transition hover:bg-green-700"
+          >
+            Join the Waitlist
+          </button>
+          <p
+            id="formMessage"
+            className="text-center text-sm text-blue-600 sm:ml-4 sm:mt-0"
+          ></p>
         </form>
+
+        <p className="mb-6 text-sm text-blue-500">
+          Be the first to know. Early birds get exclusive discounts and updates.
+        </p>
+
+        {/* 🔹 Divider with OR */}
+        <div className="mb-6 flex w-full max-w-sm items-center gap-4">
+          <div className="h-px flex-grow bg-blue-300" />
+          <span className="text-sm font-medium text-blue-500">or</span>
+          <div className="h-px flex-grow bg-blue-300" />
+        </div>
+
+        {/* 💳 Stripe Early Bird CTA */}
+        <div className="text-center">
+          <p className="mb-4 text-lg font-semibold text-blue-800">
+            🔥 Want instant access? Join now for just{" "}
+            <span className="font-bold">$49/month</span> — 50% off!
+          </p>
+          <a
+            href="https://buy.stripe.com/7sYcN4cqp6Yxduh6dn8AE00"
+            className="mb-2 inline-block rounded-lg bg-green-600 px-8 py-4 font-semibold text-white transition hover:bg-green-700"
+          >
+            Subscribe Now – $49/month Early Access
+          </a>
+          <p className="mt-1 text-sm text-green-800">
+            Cancel anytime. Lifetime early bird rate. Limited time only.
+          </p>
+        </div>
       </section>
-    </div>
+
+      {/* Optional: Coming Soon Features */}
+      <section className="bg-white px-6 pb-20 pt-10">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 text-center md:grid-cols-3">
+          <div className="rounded-xl bg-blue-100 p-6 shadow">
+            <h3 className="mb-2 text-2xl font-bold">Lead Gen Agent</h3>
+            <p className="text-sm text-blue-700">
+              Autonomously find prospects, extract contacts, and send cold
+              emails.
+            </p>
+          </div>
+          <div className="rounded-xl bg-blue-100 p-6 shadow">
+            <h3 className="mb-2 text-2xl font-bold">Content Agent</h3>
+            <p className="text-sm text-blue-700">
+              Automatically generate blogs, LinkedIn posts, and marketing
+              content using GPT-4.
+            </p>
+          </div>
+          <div className="rounded-xl bg-blue-100 p-6 shadow">
+            <h3 className="mb-2 text-2xl font-bold">Outreach Agent</h3>
+            <p className="text-sm text-blue-700">
+              Follow up with leads, respond intelligently, and book meetings on
+              autopilot.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-sm text-blue-500">
+        © {new Date().getFullYear()} SpaceGen AI. All rights reserved.
+      </footer>
+    </main>
   );
 }
-
-export default App;

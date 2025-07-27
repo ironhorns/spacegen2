@@ -1,37 +1,72 @@
-import { Rocket } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/spacegen-logo2.png";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    // { label: "Home", path: "/" },
+    // { label: "Services", path: "/services" },
+    // { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
+    // { label: "Our Clients", path: "/clients" },
+  ];
+
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100">
-      <nav className="flex justify-between items-center bg-white px-6 py-4 shadow-md sticky top-0 z-50">
-        
-        {/* Logo and Title */}
-        <Link to="/" className="flex items-center gap-2 text-gray-800 hover:text-purple-600">
-          <Rocket className="w-6 h-6 text-purple-600" />
-          <span className="text-xl font-bold">SpaceGen AI</span>
+    <div className="bg-white shadow-md">
+      <nav className="relative sticky top-0 z-50 flex flex-wrap items-center justify-between px-6 py-2">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-0">
+          <div className="m-0 w-full p-0">
+            <img
+              src={logo}
+              alt="SpaceGen AI Logo"
+              className="block h-20 w-auto object-contain"
+            />
+          </div>
         </Link>
-        
-        {/* Nav Links */}
-        <div className="flex items-center space-x-4">
-        <Link to="/" className="text-gray-700 hover:text-purple-600 font-medium">Homes</Link>
-          <Link to="/services" className="text-gray-700 hover:text-purple-600 font-medium">Services</Link>
-          <Link to="/about" className="text-gray-700 hover:text-purple-600 font-medium">About</Link>
-          <Link to="/contact" className="text-gray-700 hover:text-purple-600 font-medium">Contact</Link>
-        
-          <Link to="/clients" className="text-gray-700 hover:text-purple-600 font-medium">
-  Our Clients
-</Link>
 
-<a
-  href="https://calendly.com/trazak"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
->
-  Schedule a Call
-</a>
+        {/* Mobile menu button */}
+        <button
+          className="text-black lg:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
+        {/* Navigation Links */}
+        <div
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } mt-4 w-full lg:mt-0 lg:flex lg:w-auto lg:items-center lg:space-x-6`}
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setMenuOpen(false)}
+              className={`block px-2 py-1 text-center font-medium transition-colors lg:inline-block ${
+                isActive(item.path)
+                  ? "text-black"
+                  : "text-gray-500 hover:text-gray-800"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          {/* <a
+            href="https://calendly.com/trazak"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 block rounded-md bg-black px-4 py-2 text-center text-white transition hover:bg-gray-800 lg:mt-0 lg:inline-block"
+          >
+            Schedule a Call
+          </a> */}
         </div>
       </nav>
     </div>

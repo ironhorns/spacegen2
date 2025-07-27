@@ -29,10 +29,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_02ctonj",       // 🔁 Replace with your actual Service ID
-        "template_xvxhx66",      // 🔁 Replace with your actual Template ID
+        "service_02ctonj",
+        "template_xvxhx66",
         templateParams,
-        "eyb9nWJPGqTkDyq7v"        // 🔁 Replace with your Public Key
+        "eyb9nWJPGqTkDyq7v",
       )
       .then(() => {
         setSent(true);
@@ -49,20 +49,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-8">
-      <h1 className="text-3xl font-bold text-purple-700 mb-6">Contact Us</h1>
+    <div className="mx-auto max-w-xl p-8">
+      <h1 className="mb-6 text-3xl font-bold text-purple-700">Contact Us</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="mb-12 space-y-4">
         <input
           type="text"
           placeholder="Your Name"
-          className="w-full border px-3 py-2 rounded-md"
+          className="w-full rounded-md border px-3 py-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
         <select
-          className="w-full border px-3 py-2 rounded-md"
+          className="w-full rounded-md border px-3 py-2"
           value={reason}
           onChange={(e) => setReason(e.target.value)}
           required
@@ -75,14 +75,14 @@ const Contact = () => {
         <input
           type="email"
           placeholder="Your Email"
-          className="w-full border px-3 py-2 rounded-md"
+          className="w-full rounded-md border px-3 py-2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <textarea
           placeholder="Your Message"
-          className="w-full border px-3 py-2 rounded-md h-32"
+          className="h-32 w-full rounded-md border px-3 py-2"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
@@ -93,11 +93,14 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="w-full bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
+          className="w-full rounded-md bg-purple-600 px-4 py-2 text-white hover:bg-purple-700"
         >
           Send Message
         </button>
       </form>
+
+      {/* ===== Other Ways to Reach Us ===== */}
+      <div className="mt-8 border-t pt-8"></div>
     </div>
   );
 };

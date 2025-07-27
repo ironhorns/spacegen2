@@ -21,10 +21,10 @@ const About = () => {
   const servicesSummary = [
     { title: "AI & LLM Solutions", img: "/images/ai.jpg" },
     { title: "Full-Stack Web & Mobile", img: "/images/fullstack.jpg" },
-    { title: "Cloud & DevOps", img: "/images/cloud.jpg" },
+    { title: "Cloud & DevOps", img: "/images/cloud.svg" },
     { title: "Databases & Big Data", img: "/images/database.jpg" },
     { title: "SEO & Performance", img: "/images/seo.jpg" },
-    { title: "UI/UX Design", img: "/images/design.jpg" },
+    { title: "UI/UX Design", img: "/images/ui.jpg" },
   ];
 
   return (

@@ -1,4 +1,19 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth; /* Smooth scrolling */
+  }
+}
+
+@layer utilities {
+  .video-parallax {
+    @apply transform-gpu will-change-transform; /* GPU acceleration */
+  }
+}
+
+body {
+  @apply overflow-x-hidden bg-[#0d1b2a] font-sans tracking-wide text-white;
+}
