@@ -18,11 +18,16 @@ const config: Config = {
       borderRadius: {
         lg: "1rem",
       },
-      // Updated animations section
+      backdropBlur: {
+        sm: "4px",
+      },
+      boxShadow: {
+        subtle: "0 4px 6px rgba(0, 0, 0, 0.05)",
+      },
       animation: {
         fadeInDown: "fadeInDown 0.6s ease-out",
         shake: "shake 1.5s ease-in-out infinite",
-        float: "float 3s ease-in-out infinite", // <-- Add this line
+        float: "float 3s ease-in-out infinite",
       },
       keyframes: {
         fadeInDown: {
@@ -34,7 +39,6 @@ const config: Config = {
           "10%, 30%, 50%, 70%, 90%": { transform: "translateX(-5px)" },
           "20%, 40%, 60%, 80%": { transform: "translateX(5px)" },
         },
-        // Add float keyframes
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
@@ -42,6 +46,7 @@ const config: Config = {
       },
     },
   },
+
   plugins: [],
 };
 

@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@fontsource/inter": "^5.2.6",
     "@iconify/react": "^6.0.0",
+    "@supabase/supabase-js": "^2.53.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.518.0",

@@ -1,0 +1,11 @@
+rsync -av --progress spacegen-ai/ spacegen-backup/ \
+  --exclude node_modules \
+  --exclude .vercel \
+  --exclude .env \
+  --exclude .env.local \
+  --exclude dist \
+  --exclude build \
+  --exclude .next \
+  --exclude .vscode \
+  --exclude .DS_Store \
+  --exclude '*.log'
